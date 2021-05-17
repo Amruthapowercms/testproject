@@ -1,0 +1,55 @@
+<?php
+
+  use Drupal\Core\Database\Database;
+
+  function custom_form_schema() {
+    $schema['customform'] = array(
+      'fields' => array(
+      'id'=>array(
+      'type'=>'serial',
+      'not null' => TRUE,
+      ),
+      'full_name'=>array (
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+      ),
+      'gmail'=>array (
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ),
+      'phone_number'=>array (
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('id'),
+    );
+    return $schema;
+  }
+
+  /*function purchase_form_update_8002() {
+   $spec = array(
+      'type' => 'varchar',
+      'description' => "Address",
+      'length' => 40,
+      'not null' => FALSE,
+    ); 
+     $schema = Database::getConnection()->schema();
+     $schema->addField('purchase_form', 'address', $spec);
+     return $schema;
+    }*/
+
+
+
+  // function purchase_form_update_8007() {
+  //  $spec = array(
+  //     'type' => 'varchar'
+      
+  //   ); 
+  //  $schema = Database::getConnection()->schema();
+  //  $schema->changeField('purchase_form','candidate_number','candidate_number',$spec);
+  //  return $schema;
+  // }
