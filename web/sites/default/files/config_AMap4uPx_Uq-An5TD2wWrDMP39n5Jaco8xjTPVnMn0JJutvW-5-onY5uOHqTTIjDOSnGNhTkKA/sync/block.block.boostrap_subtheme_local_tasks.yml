@@ -1,0 +1,22 @@
+uuid: db412d02-b001-4964-a7cc-d064d54544fa
+langcode: en
+status: true
+dependencies:
+  theme:
+    - boostrap_subtheme
+_core:
+  default_config_hash: qHdtze2DZ2mFfaJadxjZz6epm92_SN9SAFY4yJGl8Fo
+id: boostrap_subtheme_local_tasks
+theme: boostrap_subtheme
+region: header
+weight: 10
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

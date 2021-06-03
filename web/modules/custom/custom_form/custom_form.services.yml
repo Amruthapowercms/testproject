@@ -1,0 +1,5 @@
+services:
+  custom_form_client:
+    class: Drupal\custom_form\Form\BadgrServices
+    arguments: ['@http_client']
+    

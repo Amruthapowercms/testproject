@@ -1,0 +1,42 @@
+uuid: 4352d27f-c767-417f-be59-3956d0be89a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.library.body
+    - field.field.node.library.field_banner
+    - field.field.node.library.field_description
+    - field.field.node.library.field_image3
+    - field.field.node.library.field_main_title
+    - field.field.node.library.field_sub_title
+    - field.field.node.library.field_subtitle
+    - node.type.library
+  module:
+    - text
+    - user
+id: node.library.teaser
+targetEntityType: node
+bundle: library
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_banner: true
+  field_description: true
+  field_image3: true
+  field_main_title: true
+  field_sub_title: true
+  field_subtitle: true

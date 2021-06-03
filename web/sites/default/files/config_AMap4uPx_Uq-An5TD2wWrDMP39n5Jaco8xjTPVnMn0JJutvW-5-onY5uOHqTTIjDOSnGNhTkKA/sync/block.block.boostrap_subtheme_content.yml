@@ -1,0 +1,22 @@
+uuid: 1fa4fdb6-c9f3-42a1-b126-d704db770d2e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - boostrap_subtheme
+_core:
+  default_config_hash: fNNLN48MSGSLiqwIFywCuxH2Dk_IxDbaP0kYhg_IPrg
+id: boostrap_subtheme_content
+theme: boostrap_subtheme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,15 @@
+uuid: 6b6c8552-7f92-482a-805a-3d7fd2b4ebf4
+langcode: en
+status: true
+dependencies: {  }
+name: test
+label: test
+effects:
+  f296c382-0be5-437f-a07b-174492495a18:
+    uuid: f296c382-0be5-437f-a07b-174492495a18
+    id: image_scale
+    weight: 1
+    data:
+      width: 800
+      height: null
+      upscale: true

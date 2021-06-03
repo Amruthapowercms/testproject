@@ -1,0 +1,51 @@
+uuid: bf1c160c-9586-4429-a4ae-fc43fb34cd05
+langcode: en
+status: true
+dependencies: {  }
+id: mail_function
+label: 'mail function'
+events:
+  -
+    event_name: 'rules_entity_insert:node--library'
+description: ''
+tags: {  }
+config_version: '3'
+expression:
+  id: rules_rule
+  uuid: 2926fab7-73b4-4025-9c3d-8eee918885dd
+  weight: 0
+  conditions:
+    id: rules_and
+    uuid: 6e149e3f-46a4-4bb7-934e-3a0c1b4b389f
+    weight: 0
+    conditions: {  }
+  actions:
+    id: rules_action_set
+    uuid: 7d303834-c808-4635-8627-0007c9869d50
+    weight: 0
+    actions:
+      -
+        id: rules_action
+        uuid: 3fc60971-af05-47fa-8c29-2f016e6abb63
+        weight: 0
+        context_values:
+          to:
+            - amrutha.pv@powercms.in
+          subject: 'test mail'
+          message: 'content has been sumbited'
+          reply: ''
+          language: ''
+        context_mapping: {  }
+        context_processors:
+          to:
+            rules_tokens: {  }
+          subject:
+            rules_tokens: {  }
+          message:
+            rules_tokens: {  }
+          reply:
+            rules_tokens: {  }
+          language:
+            rules_tokens: {  }
+        provides_mapping: {  }
+        action_id: rules_send_email

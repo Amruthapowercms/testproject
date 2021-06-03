@@ -1,0 +1,20 @@
+uuid: 14070230-b6b4-4acc-aed9-0ceea1a4ea14
+langcode: en
+status: false
+dependencies:
+  module:
+    - custom_form
+  theme:
+    - bootstrap
+id: articleblock_2
+theme: bootstrap
+region: footer
+weight: 0
+provider: null
+plugin: article
+settings:
+  id: article
+  label: 'Article block'
+  provider: custom_form
+  label_display: visible
+visibility: {  }

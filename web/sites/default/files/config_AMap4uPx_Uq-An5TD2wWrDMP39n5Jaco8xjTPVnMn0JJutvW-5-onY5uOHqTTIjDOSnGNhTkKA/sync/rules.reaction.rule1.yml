@@ -1,0 +1,71 @@
+uuid: 73cf3d04-53b1-47d6-ab36-864e48580856
+langcode: en
+status: false
+dependencies: {  }
+id: rule1
+label: Rule1
+events:
+  -
+    event_name: 'rules_entity_insert:node'
+description: 'Rule for saving content type '
+tags: {  }
+config_version: '3'
+expression:
+  id: rules_rule
+  uuid: 22a80587-4de5-4b50-80f3-b08b8db9eb8a
+  weight: 0
+  conditions:
+    id: rules_and
+    uuid: 1ce9772d-abfc-4640-b230-2758f4284d2b
+    weight: 0
+    conditions:
+      -
+        id: rules_condition
+        uuid: 7b8cd9a7-9864-417a-ba69-8273f7cc58e4
+        weight: 0
+        context_values:
+          user: administrator
+          roles:
+            - admin
+          operation: AND
+        context_mapping: {  }
+        context_processors:
+          user:
+            rules_tokens: {  }
+          roles:
+            rules_tokens: {  }
+          operation:
+            rules_tokens: {  }
+        provides_mapping: {  }
+        condition_id: rules_user_has_role
+        negate: false
+  actions:
+    id: rules_action_set
+    uuid: 632b12b4-ef60-4732-9f7e-0d4bc134f396
+    weight: 0
+    actions:
+      -
+        id: rules_action
+        uuid: a24f78ae-4a55-41a1-b7cb-ff9267ee16a3
+        weight: 0
+        context_values:
+          to:
+            - amrutha.pv@powercms.in
+          subject: 'content type [site:name]'
+          message: 'content is saved'
+          reply: ''
+          language: ''
+        context_mapping: {  }
+        context_processors:
+          to:
+            rules_tokens: {  }
+          subject:
+            rules_tokens: {  }
+          message:
+            rules_tokens: {  }
+          reply:
+            rules_tokens: {  }
+          language:
+            rules_tokens: {  }
+        provides_mapping: {  }
+        action_id: rules_send_email

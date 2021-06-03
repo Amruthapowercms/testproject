@@ -1,0 +1,27 @@
+uuid: d5b80a12-20b1-4c2d-bb64-6ba75c1bc781
+langcode: en
+status: true
+dependencies: {  }
+id: test_role1
+label: 'Test Role1'
+weight: 3
+is_admin: null
+permissions:
+  - 'access debug messages'
+  - 'access devel information'
+  - 'administer block_content display'
+  - 'administer block_content fields'
+  - 'administer blocks'
+  - 'administer comment display'
+  - 'administer comment fields'
+  - 'administer contact_message display'
+  - 'administer contact_message fields'
+  - 'administer devel_generate'
+  - 'administer node display'
+  - 'administer node fields'
+  - 'administer taxonomy_term display'
+  - 'administer user display'
+  - 'administer views'
+  - 'form permission'
+  - 'switch users'
+  - 'use admin toolbar search'

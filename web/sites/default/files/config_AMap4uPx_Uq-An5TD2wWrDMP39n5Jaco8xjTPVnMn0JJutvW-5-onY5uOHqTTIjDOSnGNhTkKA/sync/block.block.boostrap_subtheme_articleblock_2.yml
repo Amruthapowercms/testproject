@@ -1,0 +1,20 @@
+uuid: b6abe082-94e8-4f52-a198-01e47f31e723
+langcode: en
+status: false
+dependencies:
+  module:
+    - custom_form
+  theme:
+    - boostrap_subtheme
+id: boostrap_subtheme_articleblock_2
+theme: boostrap_subtheme
+region: footer
+weight: 0
+provider: null
+plugin: article
+settings:
+  id: article
+  label: 'Article block'
+  provider: custom_form
+  label_display: visible
+visibility: {  }

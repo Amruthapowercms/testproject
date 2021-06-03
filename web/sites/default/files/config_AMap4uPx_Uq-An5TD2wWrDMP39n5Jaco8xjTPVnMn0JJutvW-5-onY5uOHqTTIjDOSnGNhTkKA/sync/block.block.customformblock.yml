@@ -1,0 +1,20 @@
+uuid: c02c3e9d-52f9-41ea-a87d-d0a1057a8f9d
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_form
+  theme:
+    - bootstrap
+id: customformblock
+theme: bootstrap
+region: content
+weight: 0
+provider: null
+plugin: CustomFormBlock1
+settings:
+  id: CustomFormBlock1
+  label: 'Custom Form block'
+  provider: custom_form
+  label_display: '0'
+visibility: {  }

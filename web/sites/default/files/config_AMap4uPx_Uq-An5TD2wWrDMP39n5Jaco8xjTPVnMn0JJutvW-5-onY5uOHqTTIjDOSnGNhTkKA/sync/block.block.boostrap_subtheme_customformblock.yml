@@ -1,0 +1,20 @@
+uuid: f8665f74-25b4-46a5-b008-2a0bb86deb45
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_form
+  theme:
+    - boostrap_subtheme
+id: boostrap_subtheme_customformblock
+theme: boostrap_subtheme
+region: content
+weight: 0
+provider: null
+plugin: CustomFormBlock1
+settings:
+  id: CustomFormBlock1
+  label: 'Custom Form block'
+  provider: custom_form
+  label_display: '0'
+visibility: {  }

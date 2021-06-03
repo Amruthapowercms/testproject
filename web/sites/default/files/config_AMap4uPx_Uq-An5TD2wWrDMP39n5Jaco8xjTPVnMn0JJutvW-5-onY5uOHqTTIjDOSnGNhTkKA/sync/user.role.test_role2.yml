@@ -1,0 +1,10 @@
+uuid: 8801751d-978f-4907-9bad-9a9cadf2384c
+langcode: en
+status: true
+dependencies: {  }
+id: test_role2
+label: 'Test Role2'
+weight: 4
+is_admin: null
+permissions:
+  - 'form permission'

@@ -1,0 +1,44 @@
+uuid: 4f6a64bf-9540-4826-955a-1f215e4a77a3
+langcode: en
+status: true
+dependencies: {  }
+id: message_rule
+label: 'Message rule'
+events:
+  -
+    event_name: 'rules_entity_insert:node'
+description: ''
+tags: {  }
+config_version: '3'
+expression:
+  id: rules_rule
+  uuid: 9e68a043-2569-49bc-85f7-7795b106d409
+  weight: 0
+  conditions:
+    id: rules_and
+    uuid: e70ad06d-d162-4e58-bd99-d74fb4914181
+    weight: 0
+    conditions: {  }
+  actions:
+    id: rules_action_set
+    uuid: 67ff57a4-b79f-4ee9-8831-c253e62c3ad4
+    weight: 0
+    actions:
+      -
+        id: rules_action
+        uuid: 776e46b8-f106-47c7-8acb-88e5e41ccf01
+        weight: 0
+        context_values:
+          message: 'content type is created'
+          type: 'content type is created'
+          repeat: false
+        context_mapping: {  }
+        context_processors:
+          message:
+            rules_tokens: {  }
+          type:
+            rules_tokens: {  }
+          repeat:
+            rules_tokens: {  }
+        provides_mapping: {  }
+        action_id: rules_system_message

@@ -1,5 +1,8 @@
 <?php
-
+use Drupal\image\Entity\ImageStyle;
+use Drupal\image\Plugin\Field\FieldType\ImageItem;
+//use Drupal\file\Entity\File;
+//use Drupal\media\Entity\Media;
 function custom_form_form_alter(&$form, &$form_state, $form_id) {
 	//print_r($form_id);
  if($form_id =='node_article_form'){
@@ -18,3 +21,63 @@ function custom_form_form_alter(&$form, &$form_state, $form_id) {
 
  }
 }
+
+// function custom_form_preprocess(&$variables, $hook) {
+	
+// 	 if ($hook == 'menu__main'){
+// 	// kint($variables);
+
+// 		 	 foreach ($variables['items'] as &$item)  {
+// 		 	$item['title'] = 'test';
+			
+// 	  }
+// 	}
+	
+// 	//var_dump($hook);
+// }
+
+
+
+function custom_form_preprocess_node(&$variables) {
+ if (($node = \Drupal::routeMatch()->getParameter('node')) && $node instanceof \Drupal\node\NodeInterface) {
+  //$nid = $node->id();
+
+  //if ($variables['node']->getType() == 'library') {
+
+/*  $variables['mytitle'] = $node->field_main_title->value;
+      $banneruri = $node->field_banner->entity->getFileUri();
+    $style = \Drupal::entityTypeManager()
+  ->getStorage('image_style')
+  ->load('test2image');
+    $styleuri = $style->buildUri($banneruri);
+    if (!file_exists($styleuri)) {
+  $style->createDerivative($banneruri, $styleuri);
+}
+
+    $variables['mybanner'] = file_url_transform_relative($style->buildUrl($banneruri));
+*/
+
+// $image_file_id = $variables['node']->field_banner[0]->target_id;
+//      $file = \Drupal\file\Entity\File::load($image_file_id);
+//      $url = $file->uri->value;
+//      $variables['mybanner'] =file_create_url($url);
+
+
+
+
+
+ //$node = $variables['node'];
+    //if($node->hasField('field_banner')){
+    //   $mid = $node->field_banner[0]->getValue()['target_id'];
+    //  $fid = Media::load($mid)->field_banner[0]->getValue()['target_id'];
+    // $file = File::load($fid);
+    // $variables['mybanner'] = $file->url();
+    // }
+ }
+//ddl($variables);
+}
+
+
+
+
+

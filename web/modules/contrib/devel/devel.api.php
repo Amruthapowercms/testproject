@@ -20,6 +20,9 @@ function hook_devel_dumper_info_alter(&$info) {
   $info['default']['label'] = 'Altered label';
 }
 
+
+
+
 /**
  * @} End of "addtogroup hooks".
  */

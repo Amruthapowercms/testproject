@@ -1,0 +1,20 @@
+uuid: 82623993-5e22-4ae4-9a96-3fd0023a0572
+langcode: en
+status: true
+dependencies:
+  theme:
+    - boostrap_subtheme
+_core:
+  default_config_hash: 1TQP4b3ZnlzvIH9bj6cpCz_SyUHdJjLQkZnHpikjjhw
+id: boostrap_subtheme_page_title
+theme: boostrap_subtheme
+region: header
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

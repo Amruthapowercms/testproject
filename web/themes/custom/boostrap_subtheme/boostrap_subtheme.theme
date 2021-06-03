@@ -6,3 +6,14 @@
  *
  * Place your custom PHP code in this file.
  */
+// function boostrap_subtheme_preprocess(&$variables, $hook) {
+// 	$variables['text']= 'click';
+// 	if($hook == 'form_element_label'){
+// 		//kint($variables);
+// 		foreach ($variable['items'] as &$items)  {
+// 			$items['title'] = $items['title'] .'test';
+			
+// 		}
+// 	}
+// 	var_dump($hook);
+// }

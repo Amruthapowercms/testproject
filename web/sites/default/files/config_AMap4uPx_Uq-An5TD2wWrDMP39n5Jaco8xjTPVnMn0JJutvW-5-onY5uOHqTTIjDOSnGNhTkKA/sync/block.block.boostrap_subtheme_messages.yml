@@ -1,0 +1,22 @@
+uuid: 6656cf69-6d05-49a5-9d58-838e1577f9ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - boostrap_subtheme
+_core:
+  default_config_hash: 9RnnTUBcn0WRWXfrGOnId2H0Q31uQUeu_F5TnDxl2yg
+id: boostrap_subtheme_messages
+theme: boostrap_subtheme
+region: header
+weight: -50
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

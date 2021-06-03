@@ -1,0 +1,22 @@
+uuid: 0346c377-4f1a-45fd-8e2b-36ca3871be48
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - boostrap_subtheme
+_core:
+  default_config_hash: iggZSiUKz4mYP1YPJ8SsUfFu79HIgOTt6IDy3Up59aM
+id: boostrap_subtheme_powered
+theme: boostrap_subtheme
+region: footer
+weight: -10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

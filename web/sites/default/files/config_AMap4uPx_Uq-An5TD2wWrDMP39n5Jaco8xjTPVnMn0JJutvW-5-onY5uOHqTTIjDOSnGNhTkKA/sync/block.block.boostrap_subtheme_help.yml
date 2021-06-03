@@ -1,0 +1,22 @@
+uuid: 101dd813-8400-4b23-9b48-e60f539981cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - boostrap_subtheme
+_core:
+  default_config_hash: MhtNdV__HKRTab0ZPjkPNfYL4Ng4UPBucDLoC7Rg5Eo
+id: boostrap_subtheme_help
+theme: boostrap_subtheme
+region: help
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

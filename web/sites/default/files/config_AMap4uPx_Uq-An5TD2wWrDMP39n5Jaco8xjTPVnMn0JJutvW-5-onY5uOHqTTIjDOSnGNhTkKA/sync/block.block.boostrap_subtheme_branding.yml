@@ -1,0 +1,25 @@
+uuid: 3af49c6e-c04f-418f-b9a6-c7375a75df6c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - boostrap_subtheme
+_core:
+  default_config_hash: Cy3vkpYrD1O5JG-BeEnokF0bByHYDEa8CBfWivB4_SQ
+id: boostrap_subtheme_branding
+theme: boostrap_subtheme
+region: navigation
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }
