@@ -1,6 +1,9 @@
 <?php
 use Drupal\image\Entity\ImageStyle;
 use Drupal\image\Plugin\Field\FieldType\ImageItem;
+use Drupal\Core\Form\FormStateInterface;
+use \Drupal\Core\State\StateInterface;
+use Drupal\Core\Form\FormBase;
 //use Drupal\file\Entity\File;
 //use Drupal\media\Entity\Media;
 function custom_form_form_alter(&$form, &$form_state, $form_id) {
@@ -20,7 +23,110 @@ function custom_form_form_alter(&$form, &$form_state, $form_id) {
  	);
 
  }
+
+
 }
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+// function custom_form_form_node_library_edit_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+//   $form['field_description']['#states'] = [
+//     'invisible' => [
+//       ':input[name="field_needcheckbox[value]"]' => ['checked' => 'checked']
+//     ]
+//   ];
+// }
+
+
+
+// function custom_form_form_node_library_edit_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+//     $element[':input[name^="field_main_title[0][value]"]']['#states']['visible'][] =[
+//     ':input[name^="field_needcheckbox[]"]' => array('checked' => 'checked'),
+//     ];
+    
+// }
+
+// function custom_form_form_node_library_edit_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+
+//   $form['field_description']['#states'] = [
+//     'invisible' => [
+//       ':input[name="field_needcheckbox"]' => ['checked' => 'true']
+//     ]
+//   ];
+// }
+
+
+function custom_form_form_node_library_edit_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+ // $description = \Drupal::state()->set('name','field_description[0][value]');
+ // $checkbox = \Drupal::state()->set('name','field_needcheckbox[value]');
+ // print_r($description);
+//$description = \Drupal\field\Entity\FieldStorageConfig::loadByName('node', 'field_description'); 
+  $form['field_description']['#states'] =  [
+    'visible' => [
+      ':input[name="field_needcheckbox"]' => ['checked' => 'true']
+    ]
+  ];
+}
+
+
+
+
+
+// function custom_form_form_node_library_edit_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+//   $form['field_needcheckbox123'] = array(
+//   '#type' => 'checkbox',
+//   '#title' => t('Need CheckBox12'),
+// );
+// $form['field_description123'] = array(
+//   '#type' => 'textarea',
+//   '#title' => t('Description12'),
+//   '#states' => array(
+//     // Only show this field when the 'toggle_me' checkbox is enabled.
+//     'visible' => array(
+//       ':input[name="field_needcheckbox123"]' => array(
+//         'checked' => TRUE,
+//       ),
+//     ),
+//   ),
+// );
+
+// }
+
+
+// function custom_form_form_node_library_edit_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  
+// $form['field_description']
+//   ['#states'] =[
+//     // Only show this field when the 'toggle_me' checkbox is enabled.
+//     'visible' => array(
+//       ':input[name="field_needcheckbox"]' => array(
+//         'checked' => TRUE,
+//       ),
+//     ),
+//   ];
+
+
+// }
+
+
+
+
+
+
+
+
+
+// function custom_form_update_7100() {
+//   if('node.field_needcheckbox.value'==1){
+//   $field_art_image = field_info_instance('node', 'field_description', 'page');
+//   field_delete_instance($field_art_image);
+
+//   return 'Fields deleted, data will be cleared up on cron.';
+// }
+// }
+
 
 // function custom_form_preprocess(&$variables, $hook) {
 	

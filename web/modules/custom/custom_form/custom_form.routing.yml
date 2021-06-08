@@ -5,3 +5,10 @@ custom_form.my_form:
     _title: 'Custom Form'
   requirements:
     _permission: 'form permission'
+badge_form.form:
+  path: '/badge_form2'
+  defaults:
+    _form: '\Drupal\custom_form\Form\BadgeForm'
+    _title: 'Badge Form'
+  requirements:
+    _permission: 'form permission'

@@ -5,13 +5,18 @@ namespace Drupal\custom_form\Form;
 use GuzzleHttp\Client;
 
 /**
- *
+ * Badger api.
  */
 class BadgrServices {
+  /**
+   * Using $httpClient.
+   *
+   * @var string
+   */
   protected $httpClient;
 
   /**
-   *
+   * Contain Client $http_client.
    */
   public function __construct(Client $http_client) {
     $this->httpClient = $http_client;
@@ -21,11 +26,13 @@ class BadgrServices {
   /**
    * Get the Accesstoken and Refreshtoken .
    *
-   * @param $details
+   * @param array $details
+   *   Contain the user details.
    *
    * @return array
+   *   returns the details in array form
    */
-  public function badgr_initiate(array $details) {
+  public function badgrInitiate(array $details) {
 
     $response = $this->httpClient->request(
           'post', 'https://api.badgr.io/o/token',
@@ -52,11 +59,13 @@ class BadgrServices {
   /**
    * Refresh token can be used to automatically renew an access token .
    *
-   * @param $refreshtoken
+   * @param array $refresh_details
+   *   Contains the refreshtoken.
    *
-   * @return json object
+   * @return jsonobject
+   *   returns the details in json form
    */
-  public function badgr_refresh_token(array $refresh_details) {
+  public function badgrRefreshToken(array $refresh_details) {
     $refresh_token = $this->httpClient->request(
           'post', 'https://api.badgr.io/o/token',
           [
@@ -71,11 +80,13 @@ class BadgrServices {
   /**
    * Authenticate requests.
    *
-   * @param $accessToken
+   * @param string $accessToken
+   *   Contains the accesstoke.
    *
-   * @return json object
+   * @return jsonobject
+   *   returns the details in json form
    */
-  public function badgr_user_authenticate($accessToken) {
+  public function badgrUserAuthenticate($accessToken) {
     $response = $this->httpClient->request(
           'get', 'https://api.badgr.io/v2/users/self', [
             'headers' => ['Authorization' => 'Bearer ' . $accessToken],
@@ -96,12 +107,15 @@ class BadgrServices {
   /**
    * For Creating an Issuer.
    *
-   * @param $accessToken
-   * @param $post_details
+   * @param string $accessToken
+   *   Contains the accesstoke.
+   * @param array $post_details
+   *   Contains the issuer details.
    *
-   * @return json object
+   * @return jsonobject
+   *   returns the all issuer details in json form
    */
-  public function badgr_create_issuer($accessToken, array $post_details) {
+  public function badgrCreateIssuer($accessToken, array $post_details) {
     $response = $this->httpClient->request(
           'post', 'https://api.badgr.io/v2/issuers', [
 
@@ -119,11 +133,13 @@ class BadgrServices {
   /**
    * For Getting all Issuer.
    *
-   * @param $accessToken
+   * @param string $accessToken
+   *   Contains the accesstoken.
    *
-   * @return json object
+   * @return jsonobject
+   *   returns the all issuer details in json form
    */
-  public function badgr_get_issuer($accessToken) {
+  public function badgrGetIssuer($accessToken) {
     $response = $this->httpClient->request(
           'get', 'https://api.badgr.io/v2/issuers', [
 
@@ -139,13 +155,17 @@ class BadgrServices {
   /**
    * Update an issuer on the badgr account.
    *
-   * @param $accessToken
-   * @param $update_issure
-   * @param $entityId
+   * @param string $accessToken
+   *   Contains the accesstoken.
+   * @param array $update_issure
+   *   Contains the updated details.
+   * @param string $entityId
+   *   Conatin the entityid of badger.
    *
-   * @return json object
+   * @return jsonobject
+   *   returns the details about updated issuer in json form
    */
-  public function badgr_update_issuer($accessToken, array $update_issure, string $entityId) {
+  public function badgrUpdateIssuer($accessToken, array $update_issure, string $entityId) {
     $response = $this->httpClient->request(
           'put', 'https://api.badgr.io/v2/issuers/' . $entityId . '', [
 
@@ -162,11 +182,12 @@ class BadgrServices {
   /**
    * Delete an issuer on the badgr account.
    *
-   * @param $accessToken
-   *
-   * @return json object
+   * @param string $accessToken
+   *   Contains the accesstoken.
+   * @param string $entityId
+   *   Conatin the entityid of badger.
    */
-  public function badgr_delete_issuer($accessToken, string $entityId) {
+  public function badgrDeleteIssuer($accessToken, string $entityId) {
     $response = $this->httpClient->request(
           'delete', 'https://api.badgr.io/v2/issuers/' . $entityId,
           [
@@ -183,11 +204,17 @@ class BadgrServices {
   /**
    * To create an badges based to the issuer on the badgr account.
    *
-   * @param $accessToken
+   * @param string $accessToken
+   *   Contains the accesstoken.
+   * @param array $create_badge
+   *   Contains the badger details.
+   * @param string $entityId
+   *   Conatin the entityid of badger.
    *
-   * @return json object
+   * @return jsonobject
+   *   returns the details about created badges in json form
    */
-  public function badgr_create_issuer_badges($accessToken, array $create_badge, string $entityId) {
+  public function badgrCreateIssuerBadges($accessToken, array $create_badge, string $entityId) {
     $response = $this->httpClient->request(
           'post',
           'https://api.badgr.io/v2/issuers/' . $entityId . '/badgeclasses',
@@ -204,11 +231,13 @@ class BadgrServices {
   /**
    * To get list of badges on the badgr account.
    *
-   * @param $accessToken
+   * @param string $accessToken
+   *   Contains the accesstoken.
    *
-   * @return json object
+   * @return jsonobject
+   *   returns the details about all created badges in json form
    */
-  public function badgr_list_all_badges($accessToken) {
+  public function badgrListAllBadges($accessToken) {
     $response = $this->httpClient->request(
       'get',
       'https://api.badgr.io/v2/badgeclasses', [
@@ -225,11 +254,15 @@ class BadgrServices {
   /**
    * To update an badges.
    *
-   * @param $accessToken
+   * @param string $accessToken
+   *   Contains the accesstoken.
+   * @param array $update_badge
+   *   Body contains the updated badge details.
    *
-   * @return json is_object(var)
+   * @return jsonobject
+   *   returns the updated details in json form
    */
-  public function badgr_update_badges($accessToken, array $update_badge) {
+  public function badgrUpdateBadges($accessToken, array $update_badge) {
     $response = $this->httpClient->request(
           'put',
           'https://api.badgr.io/v2/badgeclasses/' . $entityId, [
@@ -246,11 +279,10 @@ class BadgrServices {
   /**
    * To deleting badgr account.
    *
-   * @param $accessToken
-   *
-   * @return json object
+   * @param string $accessToken
+   *   Contains the accesstoken.
    */
-  public function badgr_delete_badges($accessToken) {
+  public function badgrDeleteBadges($accessToken) {
     $response = $this->httpClient->request(
           'delete', 'https://api.badgr.io/v2/badgeclasses/gA2kCP1gQxCXQj1BsoC1fg', [
 
@@ -263,16 +295,19 @@ class BadgrServices {
   }
 
   /**
-   * Award badges on the badgr account     *
+   * Award badges on the badgr account    .
    *
-   * @param $accessToken
-   * @param $award_details
-   * @param $entityId
+   * @param string $accessToken
+   *   Contains the accesstoken.
+   * @param string $award_details
+   *   Body which include recipient details.
+   * @param string $entityId
+   *   Conatin the entityid of badger.
    *
-   * @return 
-   * json object
+   * @return jsonobject
+   *   returns the award details in json form
    */
-  public function badgr_award_badges($accessToken, $award_details, $entityId) {
+  public function badgrAwardBadges($accessToken, $award_details, $entityId) {
 
     $response = $this->httpClient->request(
         'post',

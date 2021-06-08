@@ -1,0 +1,7 @@
+badge_form.form:
+  path: '/badge_form'
+  defaults:
+    _form: '\Drupal\badge_form\Form\BadgeForm'
+    _title: 'Badge Form'
+  requirements:
+    _permission: 'form permission'

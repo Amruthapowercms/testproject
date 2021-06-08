@@ -3,7 +3,10 @@ framework:
     theme:
       css/style.css: {}
 
-# Uncomment for LESS source JavaScript files.
+  js:
+    js/script.js: {}
+
+# Uncomment for LESS source JavaScript fiSles.
 #  js:
 #    bootstrap/js/affix.js: {}
 #    bootstrap/js/alert.js: {}

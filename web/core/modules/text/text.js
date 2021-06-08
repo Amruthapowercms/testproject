@@ -30,6 +30,7 @@
             $link.appendTo($fullLabel);
           } else {
             $summary.show();
+            
             $button.html(Drupal.t('Hide summary'));
             $link.appendTo($summaryLabel);
           }
