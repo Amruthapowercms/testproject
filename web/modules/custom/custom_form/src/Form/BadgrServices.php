@@ -194,7 +194,7 @@ class BadgrServices {
 
             'headers' => ['Authorization' => 'Bearer ' . $accessToken],
 
-          ],
+          ]
       )->getBody()->getContents();
 
     return $response;
