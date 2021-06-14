@@ -137,7 +137,6 @@ class BadgeForm extends FormBase {
     $issureurl = $form_state->getvalue('issure_url');
     $badgeentityId = $form_state->getvalue('entityId');
     $action = $form_state->getvalue('action');
-    // Echo "$test";.
     $service = \Drupal::service('custom_form_client');
     $config = $this->config('custom_form.settings');
     $username = $config->get('username');
@@ -150,9 +149,6 @@ class BadgeForm extends FormBase {
     $tokens = $service->badgrInitiate($user_details);
     $refreshToken = $tokens['refreshtoken'];
     $accessToken = $tokens['accesstoken'];
-    // if($issureemail!=$username){
-    //   $form_state->setErrorByName('issure_mail', 'Email id is not matching');
-    // }.
     $issuer_details = ['name' => $issurename, 'email' => $issureemail, 'description' => $issuredescription, 'url' => $issureurl];
 
     if ($action == 'update') {

@@ -15,7 +15,7 @@ custom_form.form:
 custom_form.form3:
   path: '/create_badge'
   defaults:
-    _form: '\Drupal\custom_form\Form\createBadge'
+    _form: '\Drupal\custom_form\Form\CreateBadge'
     _title: 'Create Badge'
   requirements:
     _permission: 'form permission'

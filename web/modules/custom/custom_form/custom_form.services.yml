@@ -2,4 +2,9 @@ services:
   custom_form_client:
     class: Drupal\custom_form\Form\BadgrServices
     arguments: ['@http_client']
+services:
+  zoomapi_example.event_subscriber:
+    class: Drupal\custom_form\Form\ZoomApi
+    arguments: ['@http_client']
+    
     
